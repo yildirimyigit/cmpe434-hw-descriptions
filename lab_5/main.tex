@@ -1,0 +1,86 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+
+\graphicspath{ {image/} }
+
+\title{CMPE 434 - Introduction to Robotics}
+\subtitle{Lab 5: Can you control it?}
+\date{Deadline: October 28, 2019}
+
+\begin{document}
+\maketitle
+
+In this lab we will be experimenting with the control of an unstable
+system. We will specifically try to design a PID controller. The robot
+we will be developing will be similar to an ``inverted pendulum'' which
+is a very difficult control problem.
+
+\section{Things to do}
+
+\subsection{Building the robot}
+  Construct the Gyro Boy robot as shown in the handouts. You can find the handouts at the \href{http://robot.cmpe.boun.edu.tr/~cmpe434/doku.php?id=downloads#control}{Downloads} section of the course web page.
+
+\subsection{ Simple control}
+
+  \begin{itemize}
+    \item Write the GyroBoyBad code, compile and download it to the robot. You can download the code (GyroBoyBad.py) from
+    the \href{http://robot.cmpe.boun.edu.tr/~cmpe434/doku.php?id=downloads#control}{Downloads} section of the course web page.
+
+    \item Observe the behavior and comment on it.
+  \end{itemize}
+
+\subsection{PID Control}
+  \begin{itemize}
+    \item Write the GyroBoy code; note that KP, KI, and KD values are missing. You can download the code (GyroBoy.py) from from vthe \href{http://robot.cmpe.boun.edu.tr/~cmpe434/doku.php?id=downloads#control}{Downloads} section of the course web page.
+    \item Tune the PID parameter to find the values of KP, KI, and KD.
+    \item Observe how the behavior of the robot is affected as you change the parameters, and comment on it.
+    \item \textbf{NOTE}: Try to balance your Gyro Boy as long as possible. If you cannot keep the robot balanced more than 20 seconds, you will receive a \textbf{penalty} of \underline{25 points}.
+  \end{itemize}
+
+\subsection{Moving on}
+
+  \begin{itemize}
+    \item Change the code so that GyroBoy becomes a robot that can move forward, backward, and turn left and right as desired.
+    \item Write a code which will make the robot follow the sides of a square of 20-cm edges. In order to be regarded as successful in this task, the robot is expected to do turn around the square at least 1 minute, completing at least one full tour around the square.
+    \item \textbf{NOTE}: Given that you were able to keep your robot balanced more than 20 seconds, as requested in the previous task, if you can achieve the square task too, you will receive a \textbf{bonus} of \underline{25 points}.
+  \end{itemize}
+
+\subsection{Video Records}
+  \begin{itemize}
+    \item You will record videos for P, PI, PD and PID cases. (PI means KP and KI have a value different from 0 and KD has zero value)
+    \item You will record video for moving forward backward, turning left and turning right actions.
+    \item You will record video for following square task.
+  \end{itemize}
+
+Note: You can use other designs and other codes as long as you find PID values.
+ 
+\end{document}
+

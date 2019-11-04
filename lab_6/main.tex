@@ -1,0 +1,69 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+
+\graphicspath{ {image/} }
+
+\title{CMPE 434 - Introduction to Robotics}
+\subtitle{Lab 5: Braitenberg Vehicles}
+\date{Deadline: November 11, 2019}
+
+\begin{document}
+\maketitle
+
+In this lab, we will construct the first four Braitenberg vehicles and examine their behavior. Since the vehicles require two sensors of the same kind, an extra sensor (a light sensor) will be provided at the beginning of the lab.
+
+\section{Things to do}
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item Download \textit{Braitenberg-Vehicles.pdf} from the \href{http://robot.cmpe.boun.edu.tr/~cmpe434/doku.php?id=downloads#control}{Downloads} section.
+    \item Construct a two wheeled robot base (or use an existing one)
+    \item Construct vehicle \#1
+
+    \begin{itemize} 
+        \item Use only \textbf{one} sensor
+        \item Feed the sensor reading to both motors
+    \end{itemize}
+
+    \def\labelenumi{\arabic{enumi}.}
+    \item Construct vehicles \#2, \#3, and \#4
+    \begin{itemize}
+        \item Use the extra sensor given at the beginning of the lab.
+        \item You should use \textit{LightSensor} class instead of \textit{ColorSensor} for given extra sensor.
+        \item  NXT Light Sensor and EV3 Color Sensor give different values under the same lighting conditions. Therefore, you should implement a function for calibration.
+    \end{itemize}
+
+    \def\labelenumi{\arabic{enumi}.}
+    \item Observe the behavior of the vehicle by testing it using a light source.
+    \item Record videos for all behaviors.
+\end{enumerate}
+
+\end{document}

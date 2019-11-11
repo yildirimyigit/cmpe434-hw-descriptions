@@ -1,0 +1,63 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\graphicspath{ {image/} }
+
+\title{CMPE 434 - Introduction to Robotics}
+\subtitle{Lab 7: Braitenberg Vehicles}
+\date{Deadline: November 18, 2019}
+
+\begin{document}
+\maketitle
+
+In this lab, we will implement a behaviour based architecture using the \emph{Subsumption Architecture} developed by Rodney Brooks.
+
+\section{Things to do}
+
+\subsection{First Part}
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item Construct a two wheeled robot base (or use an existing one)
+    \item Implement the necessary behaviors for the task of seeking the light:
+    
+    \begin{itemize} 
+        \item Your robot should go forward in the direction of the light source.
+	    \item Whenever the light value drops under a certain threshold, this means that the robot loses the light. In that case, it should search the highest light value by revolving around itself 360 degrees. Upon completing 360 degrees, the robot should align its orientation with the direction of the most powerful light source.
+    \end{itemize}
+    \item  Record a video of this simple behavior.
+\end{enumerate}
+
+\subsection{Second Part}
+\begin{itemize}
+    \item Now, you are asked to design a new behaviour to be the one with the highest priority. Make your robot seek for a light source with the additional capability of collision avoidance. (Hint: You can use ultrasonic or touch sensors here.)
+    \item  Record a video of this more complex behavior.
+\end{itemize}
+
+\end{document}
+

@@ -1,0 +1,60 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\graphicspath{ {image/} }
+
+\title{CMPE 434 - Introduction to Robotics}
+\subtitle{Lab 9: Path Planning}
+\date{Deadline: December 2, 2019}
+
+\begin{document}
+\maketitle
+
+In this lab, we will examine a simple path planning algorithm called \emph{Bug1}. We will slightly modify the standard algorithm so that it becomes possible to implement with the resources that we already have. We will use a light source for representing the goal point and since our robots lack the perfect position information, we will assume that the goal point will be visible from all locations within the test area.
+
+\section{Things to do}
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item Construct a two wheeled robot base (or use an existing one)
+    \item Mount light sensor on top of the robot at a certain height so that it ``sees'' the goal point denoted by the light source even if it is faced an obstacle.
+    \item Mount the touch sensor or the ultrasonic sensor so that it detects whether the robot hits an obstacle or getting too close to one.
+    \item Develop the required behaviors using the \emph{subsumption} architecture that you are given in \textit{Lab7}
+    \begin{itemize}
+        \item \textbf{Find goal behaviour:} Search for the light source.
+        \item \textbf{Go to goal behaviour:} If the light source is at sight, move towards it.
+        \item \textbf{Avoid obstacle behaviour:} If the robot hits or detects an obstacle (use the data from the touch sensor or ultrasonic sensor), change the direction to realize the following-the-boundary behavior around the obstacle.
+        \item \textbf{Search throughout boundary behaviour:} Following the boundary of the obstacle, determine the location where the maximum light value is detected.
+    \end{itemize}
+    \item Can you develop a more efficient method? Explain in detail. If you can propose a better path planning method (supported by evidence), you will get bonus points.
+\end{enumerate}
+
+Do not forget to record videos!
+
+\end{document}
